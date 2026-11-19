@@ -1,0 +1,8 @@
+# ReMIND patients and trajectory slices
+
+Patient-level split; no patient appears in two partitions.
+
+| Branch | Train | Validation | Test | Slices per patient | Total slices |
+|---|---|---|---|---|---|
+| US–ceT1 | 66 | 12 | 19 | 200 | 19400 |
+| US–FLAIR | 45 | 11 | 13 | 200 | 13800 |

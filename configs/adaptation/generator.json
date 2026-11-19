@@ -1,0 +1,8 @@
+{
+  "modality": "ceT1",
+  "seed": 42,
+  "size": 192,
+  "data_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+  "split_file": "${DATA_ROOT}/cet1_subject_split.json",
+  "output": "${C2F_OUTPUT}/generator_ceT1"
+}

@@ -1,0 +1,7 @@
+{
+  "raw_root": "${DATA_ROOT}/raw",
+  "output_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+  "modalities": ["ceT1", "FLAIR"],
+  "planes_per_case": 200,
+  "perturbations": []
+}

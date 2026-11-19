@@ -1,0 +1,10 @@
+# Fine stage: all vs hardest training patients
+
+| Branch | Group | Patients | Plane-point (mm) | Final centre (mm) | Final rotation (°) |
+|---|---|---|---|---|---|
+| ceT1 | Train | 61 | 6.99 → 1.43 | 1.14 | 2.02 |
+| ceT1 | Val | 5 | 6.85 → 1.85 | 1.48 | 2.67 |
+| ceT1 | Test | 3 | 6.83 → 1.88 | 1.49 | 2.69 |
+| FLAIR | Train | 40 | 5.51 → 1.07 | 0.88 | 1.42 |
+| FLAIR | Val | 5 | 5.71 → 1.34 | 1.06 | 1.63 |
+| FLAIR | Test | 3 | 5.54 → 1.37 | 1.09 | 1.49 |

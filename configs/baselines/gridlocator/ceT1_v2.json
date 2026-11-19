@@ -1,0 +1,76 @@
+{
+  "name": "Cross-Modality_USConditioned_GridLocator_ceT1_v2",
+  "modality": "ceT1",
+  "seed": 42,
+  "data": {
+    "dataset_variant": "MRIFullVision",
+    "dataset_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+    "cache_root": "${DATA_ROOT}/ceT1",
+    "split_file": "${DATA_ROOT}/cet1_subject_split.json",
+    "branch": "us-space"
+  },
+  "spacing": {
+    "us_mm": 0.5,
+    "mri_mm": 1.0
+  },
+  "model": {
+    "stride": 5,
+    "mri_channels": [
+      19,
+      32,
+      64,
+      128
+    ],
+    "mri_feature_channels": 64,
+    "architecture": "spatial_template_v2",
+    "correlation_channels": 19,
+    "orientations": 32,
+    "orientation_bank": "${DATA_ROOT}/orientation_bank.json",
+    "correlation_method": "fft",
+    "checkpoint_correlation": true,
+    "us_stride": 8,
+    "us_canvas_odd_blocks": true
+  },
+  "labels": {
+    "sigma_mm": 4.3,
+    "regression_radius_mm": 4.2,
+    "slab_thickness_mm": 1.0,
+    "size_scale_mm": 98.8,
+    "window": "unpadded_saved_US_bbox_rectangle",
+    "grid_center_xyz": "4 * index_xyz + 1.5"
+  },
+  "loss": {
+    "center": "normalized_gaussian_spatial_cross_entropy",
+    "offset": "smooth_l1",
+    "size": "smooth_l1_positive",
+    "offset_weight": 1.0,
+    "size_weight": 1.0
+  },
+  "training": {
+    "max_epochs": 200,
+    "early_stopping": false,
+    "max_US_per_update": 32,
+    "fusion_microbatch": 32,
+    "slice_stride": 4,
+    "offset": "(epoch-1)%4",
+    "learning_rate": 9.3e-05,
+    "weight_decay": 0.00013,
+    "optimizer": "AdamW",
+    "scheduler": "constant",
+    "precision": "bfloat16",
+    "gradient_clip": 7.9,
+    "checkpoint_seconds": 70
+  },
+  "validation": {
+    "primary": "case_macro_center_error_mm",
+    "secondary": "case_macro_box_iou",
+    "all_saved_planes": true
+  },
+  "resources": {
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "48G",
+    "time": "24:00:00"
+  },
+  "output_root": "${DATA_ROOT}/Cross-Modality_USConditioned_GridLocator_ceT1_v2"
+}

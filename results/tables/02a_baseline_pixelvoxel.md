@@ -1,0 +1,10 @@
+# Direct 2D–3D baseline: PixelVoxel (dense pixel-to-voxel matching)
+
+Best validation epoch of each run (ReMIND).
+
+| Model | Branch | Best epoch | Split | Plane distance (mm) | Normal angle (°) | Point acc. ≤10 mm | Note |
+|---|---|---|---|---|---|---|---|
+| PixelVoxel v1 | ceT1 | 1 | validation | 15.99 | 46.1 | 0.5% | – |
+| PixelVoxel v2 | ceT1 | 1 | validation | 17.15 | 56.1 | 0.7% | – |
+| PixelVoxel v1 | FLAIR | 4 | validation | 15.75 | 55.5 | 0.8% | – |
+| PixelVoxel v2 | FLAIR | 2 | validation | 15.98 | 53.7 | 0.7% | – |

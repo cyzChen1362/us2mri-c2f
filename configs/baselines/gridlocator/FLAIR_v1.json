@@ -1,0 +1,73 @@
+{
+  "name": "Cross-Modality_USConditioned_GridLocator_FLAIR_v1",
+  "modality": "FLAIR",
+  "seed": 42,
+  "data": {
+    "dataset_variant": "MRIFullVision",
+    "dataset_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+    "cache_root": "${DATA_ROOT}/FLAIR",
+    "split_file": "${DATA_ROOT}/flair_split_used.json",
+    "branch": "us-space-flair-all-remind-20261022"
+  },
+  "spacing": {
+    "us_mm": 0.5,
+    "mri_mm": 1.0
+  },
+  "model": {
+    "stride": 4,
+    "mri_channels": [
+      19,
+      32,
+      64,
+      128
+    ],
+    "mri_feature_channels": 64,
+    "us_vector_channels": 64,
+    "us_pool": [
+      5,
+      4
+    ]
+  },
+  "labels": {
+    "sigma_mm": 5.8,
+    "regression_radius_mm": 4.9,
+    "slab_thickness_mm": 1.0,
+    "size_scale_mm": 98.9,
+    "window": "unpadded_saved_US_bbox_rectangle",
+    "grid_center_xyz": "4 * index_xyz + 1.5"
+  },
+  "loss": {
+    "center": "normalized_gaussian_spatial_cross_entropy",
+    "offset": "smooth_l1",
+    "size": "smooth_l1_positive",
+    "offset_weight": 1.0,
+    "size_weight": 1.0
+  },
+  "training": {
+    "max_epochs": 200,
+    "early_stopping": false,
+    "max_US_per_update": 32,
+    "fusion_microbatch": 32,
+    "slice_stride": 3,
+    "offset": "(epoch-1)%4",
+    "learning_rate": 0.00015,
+    "weight_decay": 9.9e-05,
+    "optimizer": "AdamW",
+    "scheduler": "constant",
+    "precision": "bfloat16",
+    "gradient_clip": 6.7,
+    "checkpoint_seconds": 57
+  },
+  "validation": {
+    "primary": "case_macro_center_error_mm",
+    "secondary": "case_macro_box_iou",
+    "all_saved_planes": true
+  },
+  "resources": {
+    "gpus": 1,
+    "cpus": 4,
+    "memory": "48G",
+    "time": "24:00:00"
+  },
+  "output_root": "${DATA_ROOT}/Cross-Modality_USConditioned_GridLocator_FLAIR_v1"
+}

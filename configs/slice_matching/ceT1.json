@@ -1,0 +1,18 @@
+{
+  "name": "Cross-Modality_Task3_Classification_MRIFullVision_ceT1_v4",
+  "modality": "ceT1",
+  "seed": 42,
+  "size": 256,
+  "max_epochs": 200,
+  "early_stopping": false,
+  "lr": 7.4e-05,
+  "encoder_lr": 1.4e-05,
+  "weight_decay": 0.00011,
+  "min_lr": 1.3e-07,
+  "grad_clip": 4,
+  "precision": "bfloat16",
+  "data_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+  "split_file": "${DATA_ROOT}/cet1_subject_split.json",
+  "weights": "${DATA_ROOT}/resnet50_torch.pt",
+  "cache_root": "${DATA_ROOT}/ceT1"
+}

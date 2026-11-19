@@ -1,0 +1,13 @@
+{
+  "modality": "ceT1",
+  "seed": 42,
+  "data": {
+    "size": 256,
+    "dataset_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+    "cache_root": "${DATA_ROOT}/ceT1",
+    "split_file": "${DATA_ROOT}/cet1_subject_split.json"
+  },
+  "model": {
+    "weights": "${DATA_ROOT}/resnet50_torch.pt"
+  }
+}

@@ -1,0 +1,12 @@
+# Direct 2D–3D baseline: GridLocator (detection-style 3D grid), train vs validation
+
+Longer training fits the training patients (~1.3 mm) while validation error grows to ~21 mm: the model does not generalise.
+
+| Model | Branch | Best val epoch | Epochs run | Train centre (mm) | Train 3D IoU | Val centre (mm) | Val 3D IoU | Last epoch: train / val centre (mm) |
+|---|---|---|---|---|---|---|---|---|
+| GridLocator v1 | ceT1 | 6 | 34 | 16.46 | 0.341 | 15.94 | 0.313 | 10.01 / 21.15 |
+| GridLocator v2 | ceT1 | 8 | 200 | 16.01 | 0.375 | 15.81 | 0.351 | 1.43 / 21.02 |
+| GridLocator v3 | ceT1 | 8 | 42 | 30.29 | 0.260 | 15.96 | 0.333 | 6.50 / 36.28 |
+| GridLocator v1 | FLAIR | 5 | 60 | 17.32 | 0.293 | 17.02 | 0.337 | 3.65 / 24.02 |
+| GridLocator v2 | FLAIR | 5 | 200 | 16.14 | 0.366 | 15.52 | 0.357 | 1.29 / 21.84 |
+| GridLocator v3 | FLAIR | 8 | 60 | 24.43 | 0.307 | 19.33 | 0.298 | 2.02 / 37.05 |

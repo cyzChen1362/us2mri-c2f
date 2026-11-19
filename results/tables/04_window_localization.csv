@@ -1,0 +1,5 @@
+Branch,Split,Patients,Slices,2D IoU,IoU ≥ 0.5,IoU ≥ 0.75,Window-centre error (mm)
+ceT1,validation,12,2400,0.770,99.5%,63.4%,9.29
+ceT1,test,19,3800,0.799,99.9%,69.7%,7.05
+FLAIR,validation,11,2200,0.716,92.0%,48.0%,11.12
+FLAIR,test,13,2600,0.750,97.8%,64.4%,8.37

@@ -1,0 +1,14 @@
+{
+  "name": "Cross-Modality_2D3D_Registration_GRU_ceT1_v1",
+  "modality": "ceT1",
+  "split_file": "${DATA_ROOT}/cet1_subject_split.json",
+  "output": "${DATA_ROOT}/Cross-Modality_2D3D_Registration_GRU_ceT1_v1",
+  "max_epochs": 1000,
+  "batch_size": 32,
+  "seed": 42,
+  "learning_rate": 8.5e-05,
+  "weight_decay": 8.1e-05,
+  "steps": 5,
+  "image_size": 256,
+  "early_stopping": false
+}

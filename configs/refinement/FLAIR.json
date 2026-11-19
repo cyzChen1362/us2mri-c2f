@@ -1,0 +1,14 @@
+{
+  "name": "Cross-Modality_2D3D_Registration_GRU_FLAIR_v1",
+  "modality": "FLAIR",
+  "split_file": "${DATA_ROOT}/flair_split_used.json",
+  "output": "${DATA_ROOT}/Cross-Modality_2D3D_Registration_GRU_FLAIR_v1",
+  "max_epochs": 1000,
+  "batch_size": 32,
+  "seed": 42,
+  "learning_rate": 0.00012,
+  "weight_decay": 6.7e-05,
+  "steps": 5,
+  "image_size": 256,
+  "early_stopping": false
+}

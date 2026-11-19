@@ -1,0 +1,7 @@
+{
+  "variant": "v1",
+  "seed": 42,
+  "data_root": "${DATA_ROOT}/RESECT",
+  "split_file": "${DATA_ROOT}/resect_split.json",
+  "output": "${C2F_OUTPUT}/planepose_v1"
+}

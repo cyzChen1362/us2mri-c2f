@@ -1,0 +1,13 @@
+{
+  "modality": "FLAIR",
+  "seed": 42,
+  "data": {
+    "size": 256,
+    "dataset_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+    "cache_root": "${DATA_ROOT}/FLAIR",
+    "split_file": "${DATA_ROOT}/flair_split_used.json"
+  },
+  "model": {
+    "weights": "${DATA_ROOT}/resnet50_torch.pt"
+  }
+}

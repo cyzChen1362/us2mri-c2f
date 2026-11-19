@@ -1,0 +1,18 @@
+{
+  "name": "Cross-Modality_Task3_Classification_MRIFullVision_FLAIR_v4",
+  "modality": "FLAIR",
+  "seed": 42,
+  "size": 256,
+  "max_epochs": 200,
+  "early_stopping": false,
+  "lr": 6.8e-05,
+  "encoder_lr": 9e-06,
+  "weight_decay": 0.00014,
+  "min_lr": 8.1e-08,
+  "grad_clip": 6,
+  "precision": "bfloat16",
+  "data_root": "${DATA_ROOT}/coregistered_MRIFullVision",
+  "split_file": "${DATA_ROOT}/flair_split_used.json",
+  "weights": "${DATA_ROOT}/resnet50_torch.pt",
+  "cache_root": "${DATA_ROOT}/FLAIR"
+}
